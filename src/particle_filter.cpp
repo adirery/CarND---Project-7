@@ -137,7 +137,7 @@ void ParticleFilter::updateWeights(double sensor_range, double std_landmark[], s
 
 		// create transformed observation vector
 		vector<LandmarkObs> observations_in_map_coordinates;
-		for (unsigned int j = 0; j <= observations.size(); j++) {
+		for (unsigned int j = 0; j < observations.size(); j++) {
 			float transformed_x = p.x + observations[j].x * cos(p.theta) - observations[j].y * sin(p.theta);
 			float transformed_y = p.y + observations[j].x * sin(p.theta) + observations[j].y * cos(p.theta);
 			int transformed_id = observations[j].id;
